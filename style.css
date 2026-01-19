@@ -51,7 +51,7 @@
 .eu-kauf-hinweis-flag {
   width: 48px !important;
   height: 48px !important;
-  background: #1a1a2e !important;
+  background: #003399 !important;
   border-radius: 50% !important;
   margin: 0 auto 24px auto !important;
   position: relative !important;
@@ -64,7 +64,7 @@
 
 .eu-kauf-hinweis-flag span {
   position: absolute !important;
-  color: #b8a038 !important;
+  color: #FFCC00 !important;
   font-size: 7px !important;
   line-height: 1 !important;
 }
