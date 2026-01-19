@@ -52,7 +52,9 @@ This extension:
 
 ## Credits
 
-EU alternatives sourced from [european-alternatives.eu](https://european-alternatives.eu) — a great resource for finding European software and services.
+Big shoutout to **[european-alternatives.eu](https://european-alternatives.eu)** 🙌
+
+They've done an amazing job curating a database of European alternatives to US tech products. This extension relies on their work to suggest alternatives. If you find this useful, check out their site and support their mission!
 
 ## License
 
