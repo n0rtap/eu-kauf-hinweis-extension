@@ -1,6 +1,6 @@
 /**
- * EU-Kauf-Hinweis Styles
- * Using EU colors: Blue (#003399) and Yellow (#FFCC00)
+ * EU Purchase Reminder Styles
+ * Berghain bouncer aesthetic - dark, minimal, industrial
  */
 
 #eu-kauf-hinweis-overlay {
@@ -9,13 +9,13 @@
   left: 0 !important;
   width: 100vw !important;
   height: 100vh !important;
-  background: rgba(0, 0, 0, 0.7) !important;
+  background: rgba(0, 0, 0, 0.95) !important;
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
   z-index: 2147483647 !important;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif !important;
-  animation: eu-kauf-fade-in 0.3s ease-out !important;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
+  animation: eu-kauf-fade-in 0.2s ease-out !important;
 }
 
 @keyframes eu-kauf-fade-in {
@@ -29,169 +29,127 @@
 
 @keyframes eu-kauf-slide-in {
   from {
-    transform: translateY(-20px) scale(0.95);
+    transform: translateY(-10px);
     opacity: 0;
   }
   to {
-    transform: translateY(0) scale(1);
+    transform: translateY(0);
     opacity: 1;
   }
 }
 
 .eu-kauf-hinweis-modal {
-  background: linear-gradient(135deg, #ffffff 0%, #f5f7fa 100%) !important;
-  border-radius: 16px !important;
-  padding: 32px 40px !important;
-  max-width: 480px !important;
+  background: #0a0a0a !important;
+  border: 1px solid #222 !important;
+  padding: 48px 56px !important;
+  max-width: 420px !important;
   width: 90% !important;
-  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.4),
-              0 0 0 1px rgba(0, 51, 153, 0.1) !important;
   text-align: center !important;
-  animation: eu-kauf-slide-in 0.4s ease-out !important;
-  position: relative !important;
-  overflow: hidden !important;
-}
-
-.eu-kauf-hinweis-modal::before {
-  content: '' !important;
-  position: absolute !important;
-  top: 0 !important;
-  left: 0 !important;
-  right: 0 !important;
-  height: 4px !important;
-  background: linear-gradient(90deg, #003399, #FFCC00, #003399) !important;
-}
-
-.eu-kauf-hinweis-flag {
-  width: 80px !important;
-  height: 56px !important;
-  background: #003399 !important;
-  border-radius: 8px !important;
-  margin: 0 auto 20px !important;
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  box-shadow: 0 4px 12px rgba(0, 51, 153, 0.3) !important;
-}
-
-.eu-kauf-hinweis-stars {
-  color: #FFCC00 !important;
-  font-size: 10px !important;
-  line-height: 1.3 !important;
-  letter-spacing: 2px !important;
+  animation: eu-kauf-slide-in 0.3s ease-out !important;
 }
 
 .eu-kauf-hinweis-title {
-  color: #003399 !important;
-  font-size: 24px !important;
-  font-weight: 700 !important;
-  margin: 0 0 12px 0 !important;
-  letter-spacing: -0.5px !important;
+  color: #ffffff !important;
+  font-size: 32px !important;
+  font-weight: 300 !important;
+  letter-spacing: 2px !important;
+  text-transform: uppercase !important;
+  margin: 0 0 24px 0 !important;
 }
 
 .eu-kauf-hinweis-service {
-  color: #2d3748 !important;
-  font-size: 15px !important;
-  margin: 0 0 12px 0 !important;
-  padding: 8px 16px !important;
-  background: #f7fafc !important;
-  border-radius: 6px !important;
-  border: 1px solid #e2e8f0 !important;
-}
-
-.eu-kauf-hinweis-service strong {
-  color: #003399 !important;
+  color: #666 !important;
+  font-size: 14px !important;
+  font-weight: 400 !important;
+  letter-spacing: 3px !important;
+  text-transform: uppercase !important;
+  margin: 0 0 24px 0 !important;
+  padding-bottom: 24px !important;
+  border-bottom: 1px solid #222 !important;
 }
 
 .eu-kauf-hinweis-text {
-  color: #4a5568 !important;
-  font-size: 15px !important;
-  line-height: 1.6 !important;
-  margin: 0 0 16px 0 !important;
+  color: #888 !important;
+  font-size: 14px !important;
+  line-height: 1.8 !important;
+  margin: 0 0 24px 0 !important;
+  font-weight: 300 !important;
 }
 
 .eu-kauf-hinweis-alternative-badge {
-  background: linear-gradient(135deg, #f0fff4 0%, #c6f6d5 100%) !important;
-  color: #276749 !important;
-  padding: 10px 16px !important;
-  border-radius: 8px !important;
-  font-size: 14px !important;
-  font-weight: 600 !important;
-  margin: 0 0 20px 0 !important;
-  border: 1px solid #9ae6b4 !important;
+  color: #4ade80 !important;
+  font-size: 12px !important;
+  font-weight: 400 !important;
+  letter-spacing: 2px !important;
+  text-transform: uppercase !important;
+  margin: 0 0 32px 0 !important;
 }
 
 .eu-kauf-hinweis-buttons {
   display: flex !important;
+  flex-direction: column !important;
   gap: 12px !important;
-  justify-content: center !important;
-  flex-wrap: wrap !important;
 }
 
 .eu-kauf-hinweis-btn {
-  padding: 14px 24px !important;
-  border-radius: 8px !important;
-  font-size: 15px !important;
-  font-weight: 600 !important;
+  padding: 16px 32px !important;
+  font-size: 12px !important;
+  font-weight: 400 !important;
+  letter-spacing: 2px !important;
+  text-transform: uppercase !important;
   cursor: pointer !important;
   transition: all 0.2s ease !important;
   text-decoration: none !important;
   border: none !important;
-  display: inline-flex !important;
-  align-items: center !important;
-  justify-content: center !important;
+  display: block !important;
+  text-align: center !important;
 }
 
 .eu-kauf-hinweis-btn-primary {
-  background: linear-gradient(135deg, #003399 0%, #0044cc 100%) !important;
-  color: #ffffff !important;
-  box-shadow: 0 4px 12px rgba(0, 51, 153, 0.3) !important;
+  background: #ffffff !important;
+  color: #000000 !important;
 }
 
 .eu-kauf-hinweis-btn-primary:hover {
-  background: linear-gradient(135deg, #002277 0%, #003399 100%) !important;
-  transform: translateY(-2px) !important;
-  box-shadow: 0 6px 16px rgba(0, 51, 153, 0.4) !important;
+  background: #4ade80 !important;
+  color: #000000 !important;
 }
 
 .eu-kauf-hinweis-btn-secondary {
-  background: #ffffff !important;
-  color: #003399 !important;
-  border: 2px solid #003399 !important;
+  background: transparent !important;
+  color: #666 !important;
+  border: 1px solid #333 !important;
 }
 
 .eu-kauf-hinweis-btn-secondary:hover {
-  background: #f0f4ff !important;
-  transform: translateY(-2px) !important;
+  color: #999 !important;
+  border-color: #444 !important;
 }
 
 .eu-kauf-hinweis-footer {
-  margin: 20px 0 0 0 !important;
-  font-size: 13px !important;
+  margin: 32px 0 0 0 !important;
 }
 
 .eu-kauf-hinweis-footer a {
-  color: #718096 !important;
+  color: #444 !important;
   text-decoration: none !important;
+  font-size: 11px !important;
+  letter-spacing: 1px !important;
+  text-transform: uppercase !important;
   transition: color 0.2s ease !important;
 }
 
 .eu-kauf-hinweis-footer a:hover {
-  color: #003399 !important;
-  text-decoration: underline !important;
+  color: #666 !important;
 }
 
-/* Responsive adjustments */
+/* Mobile */
 @media (max-width: 480px) {
   .eu-kauf-hinweis-modal {
-    padding: 24px 20px !important;
+    padding: 32px 24px !important;
   }
 
-  .eu-kauf-hinweis-buttons {
-    flex-direction: column !important;
-  }
-
-  .eu-kauf-hinweis-btn {
-    width: 100% !important;
+  .eu-kauf-hinweis-title {
+    font-size: 24px !important;
   }
 }

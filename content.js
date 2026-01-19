@@ -127,20 +127,20 @@
     const hasDirectAlternative = altInfo.isCustom || domainInfo?.slug != null;
 
     // Button text
-    const buttonText = hasDirectAlternative ? 'Take me to alternative' : 'Find EU alternatives';
+    const buttonText = hasDirectAlternative ? 'EU alternative' : 'Find EU alternatives';
 
     // Badge text
     let badgeHtml = '';
     if (altInfo.isCustom && altInfo.name) {
       badgeHtml = `
         <div class="eu-kauf-hinweis-alternative-badge">
-          ✓ Your pick: <strong>${altInfo.name}</strong>
+          → ${altInfo.name}
         </div>
       `;
     } else if (hasDirectAlternative) {
       badgeHtml = `
         <div class="eu-kauf-hinweis-alternative-badge">
-          ✓ EU alternatives exist!
+          EU alternatives available
         </div>
       `;
     }
@@ -149,31 +149,22 @@
     overlay.id = 'eu-kauf-hinweis-overlay';
     overlay.innerHTML = `
       <div class="eu-kauf-hinweis-modal">
-        <div class="eu-kauf-hinweis-flag">
-          <div class="eu-kauf-hinweis-stars">
-            ★ ★ ★<br>
-            ★ ★ ★ ★<br>
-            ★ ★ ★
-          </div>
-        </div>
-        <h2 class="eu-kauf-hinweis-title">Oi, caught you!</h2>
-        <p class="eu-kauf-hinweis-service">
-          Caught you on <strong>${serviceName}</strong> 👀
-        </p>
+        <h2 class="eu-kauf-hinweis-title">Sorry, heute nicht.</h2>
+        <p class="eu-kauf-hinweis-service">${serviceName}</p>
         <p class="eu-kauf-hinweis-text">
-          Wasn't someone here trying to support EU businesses?<br>
-          Just saying... 💙
+          You wanted to support EU businesses.<br>
+          This is not it.
         </p>
         ${badgeHtml}
         <div class="eu-kauf-hinweis-buttons">
-          <button id="eu-kauf-hinweis-dismiss" class="eu-kauf-hinweis-btn eu-kauf-hinweis-btn-secondary">
-            I know, I know...
-          </button>
           <a href="${altInfo.url}"
              ${altInfo.isCustom ? '' : 'target="_blank" rel="noopener noreferrer"'}
              class="eu-kauf-hinweis-btn eu-kauf-hinweis-btn-primary">
             ${buttonText}
           </a>
+          <button id="eu-kauf-hinweis-dismiss" class="eu-kauf-hinweis-btn eu-kauf-hinweis-btn-secondary">
+            Let me in anyway
+          </button>
         </div>
         <p class="eu-kauf-hinweis-footer">
           <a href="#" id="eu-kauf-hinweis-settings">Settings</a>
