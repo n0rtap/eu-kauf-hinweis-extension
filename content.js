@@ -149,6 +149,12 @@
     overlay.id = 'eu-kauf-hinweis-overlay';
     overlay.innerHTML = `
       <div class="eu-kauf-hinweis-modal">
+        <div class="eu-kauf-hinweis-flag">
+          <span>★</span><span>★</span><span>★</span>
+          <span>★</span><span>★</span><span>★</span>
+          <span>★</span><span>★</span><span>★</span>
+          <span>★</span><span>★</span><span>★</span>
+        </div>
         <h2 class="eu-kauf-hinweis-title">Sorry, heute nicht.</h2>
         <p class="eu-kauf-hinweis-service">${serviceName}</p>
         <p class="eu-kauf-hinweis-text">

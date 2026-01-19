@@ -48,6 +48,40 @@
   animation: eu-kauf-slide-in 0.3s ease-out !important;
 }
 
+.eu-kauf-hinweis-flag {
+  width: 48px !important;
+  height: 48px !important;
+  background: #1a1a2e !important;
+  border-radius: 50% !important;
+  margin: 0 auto 24px auto !important;
+  position: relative !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  flex-wrap: wrap !important;
+  padding: 8px !important;
+}
+
+.eu-kauf-hinweis-flag span {
+  position: absolute !important;
+  color: #b8a038 !important;
+  font-size: 7px !important;
+  line-height: 1 !important;
+}
+
+.eu-kauf-hinweis-flag span:nth-child(1) { transform: rotate(0deg) translateY(-16px) !important; }
+.eu-kauf-hinweis-flag span:nth-child(2) { transform: rotate(30deg) translateY(-16px) !important; }
+.eu-kauf-hinweis-flag span:nth-child(3) { transform: rotate(60deg) translateY(-16px) !important; }
+.eu-kauf-hinweis-flag span:nth-child(4) { transform: rotate(90deg) translateY(-16px) !important; }
+.eu-kauf-hinweis-flag span:nth-child(5) { transform: rotate(120deg) translateY(-16px) !important; }
+.eu-kauf-hinweis-flag span:nth-child(6) { transform: rotate(150deg) translateY(-16px) !important; }
+.eu-kauf-hinweis-flag span:nth-child(7) { transform: rotate(180deg) translateY(-16px) !important; }
+.eu-kauf-hinweis-flag span:nth-child(8) { transform: rotate(210deg) translateY(-16px) !important; }
+.eu-kauf-hinweis-flag span:nth-child(9) { transform: rotate(240deg) translateY(-16px) !important; }
+.eu-kauf-hinweis-flag span:nth-child(10) { transform: rotate(270deg) translateY(-16px) !important; }
+.eu-kauf-hinweis-flag span:nth-child(11) { transform: rotate(300deg) translateY(-16px) !important; }
+.eu-kauf-hinweis-flag span:nth-child(12) { transform: rotate(330deg) translateY(-16px) !important; }
+
 .eu-kauf-hinweis-title {
   color: #ffffff !important;
   font-size: 32px !important;
