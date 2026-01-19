@@ -192,7 +192,6 @@
     document.getElementById('eu-kauf-hinweis-settings').addEventListener('click', (e) => {
       e.preventDefault();
       chrome.runtime.sendMessage({ type: 'OPEN_OPTIONS' });
-      chrome.runtime.openOptionsPage?.();
     });
 
     // Close on overlay background click
