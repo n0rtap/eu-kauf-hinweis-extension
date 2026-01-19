@@ -1,8 +1,8 @@
 {
   "manifest_version": 3,
-  "name": "EU-Kauf-Hinweis",
+  "name": "EU Purchase Reminder",
   "version": "1.0.0",
-  "description": "Erinnert dich daran, bei EU-Alternativen einzukaufen, wenn du US-Webseiten besuchst.",
+  "description": "Reminds you to consider EU alternatives when visiting US websites.",
   "permissions": [
     "storage",
     "activeTab"
@@ -23,6 +23,6 @@
   ],
   "options_page": "options.html",
   "action": {
-    "default_title": "EU-Kauf-Hinweis Einstellungen"
+    "default_title": "EU Purchase Reminder Settings"
   }
 }
