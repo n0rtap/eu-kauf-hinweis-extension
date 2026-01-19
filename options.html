@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>EU-Kauf-Hinweis - Einstellungen</title>
+  <title>EU Purchase Reminder - Settings</title>
   <style>
     * {
       box-sizing: border-box;
@@ -349,73 +349,73 @@
           ★ ★ ★
         </div>
       </div>
-      <h1>EU-Kauf-Hinweis</h1>
-      <p class="subtitle">Verwalte die Liste der US-Domains, bei denen du erinnert werden möchtest</p>
+      <h1>EU Purchase Reminder</h1>
+      <p class="subtitle">Manage the list of US domains you want to be reminded about</p>
     </div>
 
     <div class="card">
-      <h2>Domain-Liste</h2>
+      <h2>Domain List</h2>
 
       <div class="domain-count" id="domainCount">
-        0 Domains gespeichert
+        0 domains saved
       </div>
 
       <div class="quick-add">
-        <input type="text" id="quickAddInput" placeholder="Domain hinzufügen (z.B. amazon.com)">
+        <input type="text" id="quickAddInput" placeholder="Add domain (e.g. amazon.com)">
         <button class="btn-primary" id="quickAddBtn">+</button>
       </div>
 
-      <label for="domainList">Alle Domains (eine pro Zeile oder kommagetrennt):</label>
-      <p class="hint">Subdomains werden automatisch erkannt (z.B. "amazon.com" erkennt auch "www.amazon.com")</p>
+      <label for="domainList">All domains (one per line or comma-separated):</label>
+      <p class="hint">Subdomains are detected automatically (e.g. "amazon.com" also matches "www.amazon.com")</p>
       <textarea id="domainList" placeholder="amazon.com
 walmart.com
 apple.com"></textarea>
 
       <div class="button-row">
-        <button class="btn-primary" id="saveBtn">Speichern</button>
-        <button class="btn-secondary" id="resetBtn">Zurücksetzen</button>
-        <button class="btn-danger" id="clearBtn">Alle löschen</button>
+        <button class="btn-primary" id="saveBtn">Save</button>
+        <button class="btn-secondary" id="resetBtn">Reset</button>
+        <button class="btn-danger" id="clearBtn">Clear all</button>
       </div>
 
       <div id="status" class="status"></div>
 
       <div class="import-section">
-        <label>Aus Datei importieren:</label>
-        <p class="hint">Lade eine Textdatei mit Domains hoch (eine pro Zeile oder kommagetrennt)</p>
+        <label>Import from file:</label>
+        <p class="hint">Upload a text file with domains (one per line or comma-separated)</p>
         <div class="file-input-wrapper">
           <input type="file" id="fileInput" accept=".txt,.csv">
-          <label for="fileInput" class="file-label">📁 Datei auswählen</label>
+          <label for="fileInput" class="file-label">📁 Choose file</label>
         </div>
       </div>
     </div>
 
     <div class="card">
-      <h2>Eigene Alternativen</h2>
-      <p class="hint">Definiere deine bevorzugten EU-Alternativen für bestimmte Domains. Diese haben Vorrang vor den Standard-Alternativen.</p>
+      <h2>Custom Alternatives</h2>
+      <p class="hint">Define your preferred EU alternatives for specific domains. These take priority over the default alternatives.</p>
 
       <div class="add-alt-form">
-        <input type="text" id="altDomainInput" placeholder="Domain (z.B. amazon.de)">
-        <input type="text" id="altUrlInput" placeholder="Alternative URL (z.B. https://kaufland.de)">
+        <input type="text" id="altDomainInput" placeholder="Domain (e.g. amazon.de)">
+        <input type="text" id="altUrlInput" placeholder="Alternative URL (e.g. https://kaufland.de)">
         <button class="btn-primary" id="addAltBtn">+</button>
       </div>
 
       <div class="alt-list" id="altList">
-        <div class="alt-empty">Keine eigenen Alternativen definiert</div>
+        <div class="alt-empty">No custom alternatives defined</div>
       </div>
 
       <div id="altStatus" class="status"></div>
     </div>
 
     <div class="card">
-      <h2>Hilfe</h2>
+      <h2>Help</h2>
       <p style="line-height: 1.8; color: #4a5568;">
-        <strong>So funktioniert's:</strong><br>
-        Wenn du eine Webseite besuchst, deren Domain in dieser Liste steht, erscheint ein Hinweis,
-        der dich daran erinnert, nach EU-Alternativen zu suchen.<br><br>
-        <strong>Eigene Alternativen:</strong> Du kannst für jede Domain deine bevorzugte EU-Alternative festlegen.
-        Wenn du z.B. für amazon.de lieber zu kaufland.de wechseln möchtest, trage das oben ein.<br><br>
-        <strong>Tipp:</strong> Füge nur die Hauptdomain hinzu (z.B. "amazon.com"),
-        nicht die vollständige URL. Subdomains werden automatisch erkannt.
+        <strong>How it works:</strong><br>
+        When you visit a website whose domain is in this list, a reminder will appear
+        encouraging you to look for EU alternatives.<br><br>
+        <strong>Custom alternatives:</strong> You can set your preferred EU alternative for any domain.
+        For example, if you prefer kaufland.de over amazon.de, add it above.<br><br>
+        <strong>Tip:</strong> Only add the main domain (e.g. "amazon.com"),
+        not the full URL. Subdomains are detected automatically.
       </p>
     </div>
   </div>

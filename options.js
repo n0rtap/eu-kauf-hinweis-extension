@@ -217,7 +217,7 @@ function showStatus(message, isError = false, element = statusDiv) {
  * Update domain count display
  */
 function updateDomainCount(count) {
-  domainCountDiv.textContent = `${count} Domain${count !== 1 ? 's' : ''} gespeichert`;
+  domainCountDiv.textContent = `${count} domain${count !== 1 ? 's' : ''} saved`;
 }
 
 /**
@@ -240,7 +240,7 @@ function renderAlternativesList() {
   const entries = Object.entries(customAlternatives);
 
   if (entries.length === 0) {
-    altListDiv.innerHTML = '<div class="alt-empty">Keine eigenen Alternativen definiert</div>';
+    altListDiv.innerHTML = '<div class="alt-empty">No custom alternatives defined</div>';
     return;
   }
 
@@ -253,7 +253,7 @@ function renderAlternativesList() {
         <span class="alt-target">
           <a href="${info.url}" target="_blank" rel="noopener">${info.name || info.url}</a>
         </span>
-        <button class="alt-delete" title="Löschen">×</button>
+        <button class="alt-delete" title="Delete">×</button>
       </div>
     `).join('');
 
@@ -264,7 +264,7 @@ function renderAlternativesList() {
       delete customAlternatives[domain];
       await chrome.storage.sync.set({ customAlternatives });
       renderAlternativesList();
-      showStatus(`Alternative für "${domain}" gelöscht.`, false, altStatusDiv);
+      showStatus(`Alternative for "${domain}" deleted.`, false, altStatusDiv);
     });
   });
 }
@@ -287,13 +287,13 @@ async function addCustomAlternative() {
 
   // Validate domain
   if (!domain || !domain.includes('.')) {
-    showStatus('Bitte eine gültige Domain eingeben (z.B. amazon.de)', true, altStatusDiv);
+    showStatus('Please enter a valid domain (e.g. amazon.de)', true, altStatusDiv);
     return;
   }
 
   // Validate and normalize URL
   if (!url) {
-    showStatus('Bitte eine Alternative-URL eingeben', true, altStatusDiv);
+    showStatus('Please enter an alternative URL', true, altStatusDiv);
     return;
   }
 
@@ -305,7 +305,7 @@ async function addCustomAlternative() {
   try {
     new URL(url); // Validate URL format
   } catch {
-    showStatus('Bitte eine gültige URL eingeben', true, altStatusDiv);
+    showStatus('Please enter a valid URL', true, altStatusDiv);
     return;
   }
 
@@ -322,7 +322,7 @@ async function addCustomAlternative() {
 
   // Update UI
   renderAlternativesList();
-  showStatus(`Alternative für "${domain}" hinzugefügt!`, false, altStatusDiv);
+  showStatus(`Alternative for "${domain}" added!`, false, altStatusDiv);
 
   // Also add the domain to blocked list if not present
   const currentDomains = parseDomains(domainListTextarea.value);
@@ -351,14 +351,14 @@ async function saveDomains() {
   const domains = parseDomains(domainListTextarea.value);
 
   if (domains.length === 0) {
-    showStatus('Keine gültigen Domains gefunden. Bitte mindestens eine Domain eingeben.', true);
+    showStatus('No valid domains found. Please enter at least one domain.', true);
     return;
   }
 
   await chrome.storage.sync.set({ blockedDomains: domains });
   domainListTextarea.value = domains.join('\n');
   updateDomainCount(domains.length);
-  showStatus(`${domains.length} Domain${domains.length !== 1 ? 's' : ''} gespeichert!`);
+  showStatus(`${domains.length} domain${domains.length !== 1 ? 's' : ''} saved!`);
 }
 
 /**
@@ -368,14 +368,14 @@ async function quickAddDomain() {
   const newDomain = quickAddInput.value.trim().toLowerCase();
 
   if (!newDomain || !newDomain.includes('.')) {
-    showStatus('Bitte eine gültige Domain eingeben (z.B. amazon.com)', true);
+    showStatus('Please enter a valid domain (e.g. amazon.com)', true);
     return;
   }
 
   const currentDomains = parseDomains(domainListTextarea.value);
 
   if (currentDomains.includes(newDomain)) {
-    showStatus('Diese Domain ist bereits in der Liste.', true);
+    showStatus('This domain is already in the list.', true);
     return;
   }
 
@@ -385,18 +385,18 @@ async function quickAddDomain() {
 
   await chrome.storage.sync.set({ blockedDomains: currentDomains });
   updateDomainCount(currentDomains.length);
-  showStatus(`"${newDomain}" hinzugefügt!`);
+  showStatus(`"${newDomain}" added!`);
 }
 
 /**
  * Reset to default domains
  */
 async function resetToDefaults() {
-  if (confirm('Möchtest du die Liste auf die Standardwerte zurücksetzen? Dies fügt alle ' + DEFAULT_DOMAINS.length + ' vordefinierten Domains hinzu.')) {
+  if (confirm('Reset the list to defaults? This will add all ' + DEFAULT_DOMAINS.length + ' predefined domains.')) {
     await chrome.storage.sync.set({ blockedDomains: DEFAULT_DOMAINS });
     domainListTextarea.value = DEFAULT_DOMAINS.join('\n');
     updateDomainCount(DEFAULT_DOMAINS.length);
-    showStatus('Liste auf Standardwerte zurückgesetzt!');
+    showStatus('List reset to defaults!');
   }
 }
 
@@ -404,11 +404,11 @@ async function resetToDefaults() {
  * Clear all domains
  */
 async function clearAllDomains() {
-  if (confirm('Möchtest du wirklich alle Domains löschen?')) {
+  if (confirm('Are you sure you want to delete all domains?')) {
     await chrome.storage.sync.set({ blockedDomains: [] });
     domainListTextarea.value = '';
     updateDomainCount(0);
-    showStatus('Alle Domains gelöscht!');
+    showStatus('All domains deleted!');
   }
 }
 
@@ -433,14 +433,14 @@ function importFromFile(event) {
     updateDomainCount(mergedDomains.length);
 
     const newCount = mergedDomains.length - currentDomains.length;
-    showStatus(`${newCount} neue Domain${newCount !== 1 ? 's' : ''} importiert!`);
+    showStatus(`${newCount} new domain${newCount !== 1 ? 's' : ''} imported!`);
 
     // Reset file input
     fileInput.value = '';
   };
 
   reader.onerror = () => {
-    showStatus('Fehler beim Lesen der Datei.', true);
+    showStatus('Error reading file.', true);
   };
 
   reader.readAsText(file);
