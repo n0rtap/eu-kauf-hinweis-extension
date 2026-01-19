@@ -191,7 +191,12 @@
 
     document.getElementById('eu-kauf-hinweis-settings').addEventListener('click', (e) => {
       e.preventDefault();
-      chrome.runtime.sendMessage({ type: 'OPEN_OPTIONS' });
+      try {
+        chrome.runtime.sendMessage({ type: 'OPEN_OPTIONS' });
+      } catch {
+        // Extension was reloaded, refresh the page
+        window.location.reload();
+      }
     });
 
     // Close on overlay background click
