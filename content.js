@@ -156,7 +156,7 @@
             ★ ★ ★
           </div>
         </div>
-        <h2 class="eu-kauf-hinweis-title">Oi, Julian!</h2>
+        <h2 class="eu-kauf-hinweis-title">Oi, caught you!</h2>
         <p class="eu-kauf-hinweis-service">
           Caught you on <strong>${serviceName}</strong> 👀
         </p>
